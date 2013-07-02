@@ -1,0 +1,34 @@
+<table class="table-striped">
+    <thead>
+		<tr>
+			<th>Ticker</th>
+			<th>Company</th>
+			<th>Market Cap</th>
+			<th>P/E</th>
+			<th>P/S</th>
+			<th>P/B</th>
+			<th>PFreeCashFlow</th>
+			<th>Dividend Yield</th>
+			<th>Performance Half Year</th>
+			<th>Price</th>
+			<th>E/BITDA</th>
+			<th>Buyback</th>
+		</tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="stock in stocks">
+            <td><a href="http://finviz.com/quote.ashx?t=A&ty=c&ta=1&p=d&b=1&c=0,1,2,6,7,10,11,13,14,45,65">{{stock.Ticker}}</a></td>
+            <td>{{stock.Company}}</td>
+            <td>{{stock.MarketCap}}</td>
+            <td>{{stock.PE}}</td>
+            <td>{{stock.PS}}</td>
+            <td>{{stock.PB}}</td>
+            <td>{{stock.PFreeCashFlow}}</td>
+            <td>{{stock.DividendYield}}</td>
+            <td>{{stock.PerformanceHalfYear}}</td>
+            <td>{{stock.Price}}</td>
+            <td><a href="http://finance.yahoo.com/q/ks?s={{stock.Ticker}}">{{stock.EBITDA}}</a></td>
+            <td><a href="http://finance.yahoo.com/q/cf?s={{stock.Ticker}}">{{stock.BB}}</a></td>
+        </tr>
+    </tbody>
+</table>

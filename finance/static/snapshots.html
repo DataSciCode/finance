@@ -1,0 +1,8 @@
+<div class="hero-unit">
+    <h1>Nick's finance</h1>
+    <p>This website displays aggregated finance data, needed to calculate the trending value portfolio.</p>
+</div>
+<h2>Snapshots</h2>
+<ul>
+    <li ng-repeat="snapshot in snapshots"><a href="#/stocks/{{snapshot.id}}">{{snapshot.snapshot | date:'medium'}}</a></li>
+</ul>
