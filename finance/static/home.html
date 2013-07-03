@@ -1,0 +1,18 @@
+<div class="hero-unit">
+    <h1>Nick's finance</h1>
+    <p>This website displays aggregated finance data, needed to calculate the trending value portfolio.</p>
+	<p>To know more about me visit my <a href="http://nmr.io">portfolio</a> or follow me on m <a href="http://blog.nmr.io">blog</a>.</p>
+	<p>For any request or comment <a href="http://nmr.io/contact">contact</a> me.</p>
+</div>
+<h2>Snapshots</h2>
+<ul>
+    <li ng-repeat="snapshot in snapshots"><a href="#/snapshots/{{snapshot.id}}/stocks">{{snapshot.snapshot*1000 | date:'medium'}}</a></li>
+</ul>
+<h2>API</h2>
+<p>This website comes with a simple API. See the following examples:</p>
+<pre>
+GET <a href="/api/v1/snapshots">/api/v1/snapshots</a>
+GET <a href="/api/v1/snapshots/1/stocks">/api/v1/snapshots/1/stocks</a>
+GET <a href="/api/v1/snapshots/1/stocks/YHOO">/api/v1/snapshots/1/stocks/YHOO</a>
+</pre>
+
