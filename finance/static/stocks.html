@@ -1,6 +1,18 @@
+<h1>Trending Values</h2>
+<p>Disclaimer: the contents of this site come with ABSOLUTELY NO WARRANTY.</p>
+<p>The code is alpha and has not been reviewed yet. The values could be wrong.</p>
+<p>Values of 1000000000.00 and 1000000001.00 are placeholders.</p>
+<p>For any request, comment or advise <a href="http://nmr.io/contact/">contact</a> me.</p>
+<form ng-submit="search()">
+	<input type="text" ng-model="stockTicker" placeholder="search a stock" />
+	<input type="submit" value="Search" />
+</form>
 <table class="table-striped">
     <thead>
 		<tr>
+			<th>Rank</th>
+			<th>OVRRank</th>
+			<th>Performance Half Year</th>
 			<th>Ticker</th>
 			<th>Company</th>
 			<th>Market Cap</th>
@@ -9,15 +21,18 @@
 			<th>P/B</th>
 			<th>PFreeCashFlow</th>
 			<th>Dividend Yield</th>
-			<th>Performance Half Year</th>
 			<th>Price</th>
-			<th>EBITDA</th>
+			<th>EV/EBITDA</th>
 			<th>Buyback</th>
 		</tr>
     </thead>
     <tbody>
         <tr ng-repeat="stock in stocks">
-            <td><a href="http://finviz.com/quote.ashx?t=A&ty=c&ta=1&p=d&b=1&c=0,1,2,6,7,10,11,13,14,45,65">{{stock.Ticker}}</a></td>
+            <td>{{stock.Rank}}</td>
+            <td>{{stock.OVRRank}}</td>
+            <td>{{stock.PerformanceHalfYear}}</td>
+            <td><a href="#/snapshots/{{stock.snapshot}}/stocks/{{stock.Ticker}}">{{stock.Ticker}}</a>
+                (<a href="http://finviz.com/quote.ashx?t={{stock.Ticker}}&ty=c&ta=1&p=d&b=1">Finviz</a>)</td>
             <td>{{stock.Company}}</td>
             <td>{{stock.MarketCap}}</td>
             <td>{{stock.PE}}</td>
@@ -25,10 +40,9 @@
             <td>{{stock.PB}}</td>
             <td>{{stock.PFreeCashFlow}}</td>
             <td>{{stock.DividendYield}}</td>
-            <td>{{stock.PerformanceHalfYear}}</td>
             <td>{{stock.Price}}</td>
-            <td><a href="http://finance.yahoo.com/q/ks?s={{stock.Ticker}}">{{stock.EBITDA}}</a></td>
-            <td><a href="http://finance.yahoo.com/q/cf?s={{stock.Ticker}}">{{stock.BB}}</a></td>
+            <td>{{stock.EVEBITDA}} (<a href="http://finance.yahoo.com/q/ks?s={{stock.Ticker}}">Yahoo</a>)</td>
+            <td>{{stock.BB}} (<a href="http://finance.yahoo.com/q/cf?s={{stock.Ticker}}">Yahoo</a>)</td>
         </tr>
     </tbody>
 </table>

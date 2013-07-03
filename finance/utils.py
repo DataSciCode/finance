@@ -22,7 +22,6 @@ def to_dict(data, attrs=None):
     elif isinstance(data, QuerySet):
         return to_dict(list(data))
     elif isinstance(data, Model):
-        print model_to_dict(data)
         r = model_to_dict(data)
         if attrs:
             res = {}

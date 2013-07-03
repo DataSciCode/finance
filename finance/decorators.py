@@ -17,7 +17,7 @@ def post(f):
 class DjangoEncoder(js.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime.datetime):
-            return int(mktime(obj.timetuple()))
+            return mktime(obj.timetuple())
         elif isinstance(obj, Decimal):
             return str(obj)
         return js.JSONEncoder.default(self, obj)

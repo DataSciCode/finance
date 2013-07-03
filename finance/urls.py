@@ -17,7 +17,8 @@ urlpatterns = patterns('finance.views',
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'home'),
     url(r'^api/v1/snapshots$', 'snapshots'),
-    url(r'^api/v1/stocks/(?P<snapshot>\d+)$', 'stocks'),
+    url(r'^api/v1/snapshots/(?P<snapshot>\d+)/stocks$', 'stocks'),
+    url(r'^api/v1/snapshots/(?P<snapshot>\d+)/stocks/(?P<stock>\w+)$', 'stock'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
