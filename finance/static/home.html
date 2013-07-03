@@ -1,13 +1,13 @@
 <div class="hero-unit">
-    <h1>Nick's finance</h1>
+    <h1>Nick's Finance</h1>
     <p>This website displays aggregated finance data, needed to calculate the trending value portfolio.</p>
-	<p>To know more about me visit my <a href="http://nmr.io">portfolio</a> or follow me on m <a href="http://blog.nmr.io">blog</a>.</p>
-	<p>For any request or comment <a href="http://nmr.io/contact">contact</a> me.</p>
 </div>
+
 <h2>Snapshots</h2>
 <ul>
     <li ng-repeat="snapshot in snapshots"><a href="#/snapshots/{{snapshot.id}}/stocks">{{snapshot.snapshot*1000 | date:'medium'}}</a></li>
 </ul>
+
 <h2>API</h2>
 <p>This website comes with a simple API. See the following examples:</p>
 <pre>
@@ -15,4 +15,20 @@ GET <a href="/api/v1/snapshots">/api/v1/snapshots</a>
 GET <a href="/api/v1/snapshots/1/stocks">/api/v1/snapshots/1/stocks</a>
 GET <a href="/api/v1/snapshots/1/stocks/YHOO">/api/v1/snapshots/1/stocks/YHOO</a>
 </pre>
+
+<h2>Open Source</h2>
+<p>Disclaimer: the contents of this website come WITH NO WARRANTY watsoever.</p>
+<p>This is open source alpha code. Review it on <a href="http://github.com/fuligginoso/finance">github</a>.</p>
+
+<h2>Thanks</h2>
+<p>Thanks to Paul Novell from <a href="http://investingforaliving.wordpress.com/">Investing for a living</a> for his <a href="http://investingforaliving.wordpress.com/2013/06/15/quantitative-investing-trending-value-strategy/">introduction to quantitative investing</a>.</p>
+<p>Thanks to <a href="http://www.reddit.com/user/SwellsInMoisture">SwellsInMoisture</a> for his <a href="http://www.reddit.com/r/investing/comments/1eyx3r/how_do_you_select_stocks_contd_trending_value_see/">thread about trending value on reddit</a> and for his <a href="http://www.mathworks.com/matlabcentral/fileexchange/41940">Matlab script</a> which was the main inspiration for this website.</p>
+
+<h2>About Me</h2>
+<p>Hi! I'm Nicola, a computer science student in Zurich, Switzerland.</p>
+<p>To know more about me visit my <a href="http://nmr.io">portfolio</a> or follow me on my <a href="http://blog.nmr.io">blog</a>.</p>
+<p>For any request or comment <a href="http://nmr.io/contact">contact</a> me.</p>
+<p>PS. By the way, trending value or not, <a href="http://blog.nmr.io/2013/06/13/divest-divest-divest/">don't invest in fossil fuels</a>:</p>
+<blockquote>It makes no sense to pay for your retirement by investing in companies that guarantee you won't have a planet worth retiring on.<br />
+Bill McKibben</blockquote>
 

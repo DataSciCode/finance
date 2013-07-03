@@ -1,8 +1,6 @@
 <h1>Trending Values</h2>
-<p>Disclaimer: the contents of this site come with ABSOLUTELY NO WARRANTY.</p>
-<p>The code is alpha and has not been reviewed yet. The values could be wrong.</p>
-<p>Values of 1000000000.00 and 1000000001.00 are placeholders.</p>
-<p>For any request, comment or advise <a href="http://nmr.io/contact/">contact</a> me.</p>
+<p>The results are selected to have an overall rank >= 90%, and then ordered by Momentum (Performance Half Year).</p>
+<p>The first 25 stocks should represent the trending value portfolio.</p>
 <form ng-submit="search()">
 	<input type="text" ng-model="stockTicker" placeholder="search a stock" />
 	<input type="submit" value="Search" />
@@ -10,9 +8,8 @@
 <table class="table-striped">
     <thead>
 		<tr>
-			<th>Rank</th>
-			<th>OVRRank</th>
-			<th>Performance Half Year</th>
+			<th>Overall Rank</th>
+			<th>Momentum</th>
 			<th>Ticker</th>
 			<th>Company</th>
 			<th>Market Cap</th>
@@ -24,11 +21,11 @@
 			<th>Price</th>
 			<th>EV/EBITDA</th>
 			<th>Buyback</th>
+			<th>Rank</th>
 		</tr>
     </thead>
     <tbody>
         <tr ng-repeat="stock in stocks">
-            <td>{{stock.Rank}}</td>
             <td>{{stock.OVRRank}}</td>
             <td>{{stock.PerformanceHalfYear}}</td>
             <td><a href="#/snapshots/{{stock.snapshot}}/stocks/{{stock.Ticker}}">{{stock.Ticker}}</a>
@@ -43,6 +40,12 @@
             <td>{{stock.Price}}</td>
             <td>{{stock.EVEBITDA}} (<a href="http://finance.yahoo.com/q/ks?s={{stock.Ticker}}">Yahoo</a>)</td>
             <td>{{stock.BB}} (<a href="http://finance.yahoo.com/q/cf?s={{stock.Ticker}}">Yahoo</a>)</td>
+            <td>{{stock.Rank}}</td>
         </tr>
     </tbody>
 </table>
+<h2>Disclaimer</h2>
+<p>The contents of this site come with ABSOLUTELY NO WARRANTY.</p>
+<p>The code is alpha and has not been reviewed yet. The values could be wrong.</p>
+<p>Values of 1000000000.00 and 1000000001.00 are placeholders.</p>
+<p>For any request, comment or advise <a href="http://nmr.io/contact/">contact</a> me.</p>
