@@ -139,7 +139,7 @@ def import_buyback_yield(snapshot, startwith=None):
                 print "Trying again in 1 sec"
                 time.sleep(1)
 
-def set_placeholders(snapshot):
+#def set_placeholders(snapshot):
     # TODO
 
 def compute_rank(snapshot, step=0):
